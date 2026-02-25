@@ -1,0 +1,14 @@
+# Local database - teammates run "dotnet ef database update" to create their own
+*.sqlite
+*.sqlite3
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+.vs/
