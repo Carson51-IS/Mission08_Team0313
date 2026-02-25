@@ -1,0 +1,86 @@
+@model IEnumerable<Mission08_Team0313.Models.ToDoTask>
+
+@{
+    ViewData["Title"] = "Quadrants";
+
+    // Group tasks by quadrant (only incomplete tasks should be passed from controller)
+    var q1Tasks = Model.Where(t => t.Quadrant == 1).ToList();
+    var q2Tasks = Model.Where(t => t.Quadrant == 2).ToList();
+    var q3Tasks = Model.Where(t => t.Quadrant == 3).ToList();
+    var q4Tasks = Model.Where(t => t.Quadrant == 4).ToList();
+}
+
+<h2 class="text-center mb-4">Stephen Covey's Time Management Matrix</h2>
+
+<!-- Column Headers -->
+<div class="row text-center mb-2">
+    <div class="col-2"></div>
+    <div class="col-5"><h4>Urgent</h4></div>
+    <div class="col-5"><h4>Not Urgent</h4></div>
+</div>
+
+<!-- Row 1: Important -->
+<div class="row" style="min-height: 300px;">
+    <!-- Row Label -->
+    <div class="col-2 d-flex align-items-center justify-content-center">
+        <h4 class="text-center" style="writing-mode: vertical-rl; transform: rotate(180deg);">Important</h4>
+    </div>
+
+    <!-- Quadrant I: Important / Urgent -->
+    <div class="col-5">
+        <div class="card h-100 border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">Quadrant I – Important &amp; Urgent</h5>
+            </div>
+            <div class="card-body">
+                @await Html.PartialAsync("_TaskList", q1Tasks)
+            </div>
+        </div>
+    </div>
+
+    <!-- Quadrant II: Important / Not Urgent -->
+    <div class="col-5">
+        <div class="card h-100 border-success">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Quadrant II – Important &amp; Not Urgent</h5>
+            </div>
+            <div class="card-body">
+                @await Html.PartialAsync("_TaskList", q2Tasks)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-3"></div>
+
+<!-- Row 2: Not Important -->
+<div class="row" style="min-height: 300px;">
+    <!-- Row Label -->
+    <div class="col-2 d-flex align-items-center justify-content-center">
+        <h4 class="text-center" style="writing-mode: vertical-rl; transform: rotate(180deg);">Not Important</h4>
+    </div>
+
+    <!-- Quadrant III: Not Important / Urgent -->
+    <div class="col-5">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning">
+                <h5 class="mb-0">Quadrant III – Not Important &amp; Urgent</h5>
+            </div>
+            <div class="card-body">
+                @await Html.PartialAsync("_TaskList", q3Tasks)
+            </div>
+        </div>
+    </div>
+
+    <!-- Quadrant IV: Not Important / Not Urgent -->
+    <div class="col-5">
+        <div class="card h-100 border-secondary">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Quadrant IV – Not Important &amp; Not Urgent</h5>
+            </div>
+            <div class="card-body">
+                @await Html.PartialAsync("_TaskList", q4Tasks)
+            </div>
+        </div>
+    </div>
+</div>
