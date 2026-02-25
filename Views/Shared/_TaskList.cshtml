@@ -1,0 +1,50 @@
+@model IEnumerable<Mission08_Team0313.Models.ToDoTask>
+
+@if (!Model.Any())
+{
+    <p class="text-muted"><em>No tasks</em></p>
+}
+else
+{
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Due Date</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.TaskName</td>
+                    <td>@(task.DueDate?.ToString("MM/dd/yyyy") ?? "N/A")</td>
+                    <td>@task.Category?.CategoryName</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId"
+                           class="btn btn-sm btn-outline-primary" title="Update">
+                            Update
+                        </a>
+
+                        <form asp-controller="Home" asp-action="MarkComplete" asp-route-id="@task.TaskId"
+                              method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mark Complete">
+                                ✔
+                            </button>
+                        </form>
+
+                        <form asp-controller="Home" asp-action="Delete" asp-route-id="@task.TaskId"
+                              method="post" style="display:inline;"
+                              onsubmit="return confirm('Are you sure you want to delete this task?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                ✕
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
