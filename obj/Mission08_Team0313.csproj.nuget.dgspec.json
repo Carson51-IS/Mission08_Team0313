@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj": {}
+    "c:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj": {
+    "c:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj",
+        "projectUniqueName": "c:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj",
         "projectName": "Mission08_Team0313",
-        "projectPath": "C:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj",
+        "projectPath": "c:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\Mission08_Team0313.csproj",
         "packagesPath": "C:\\Users\\carso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\obj\\",
+        "outputPath": "c:\\Users\\carso\\OneDrive\\Desktop\\BYU CLASSES\\Winter Semester 2026 (IS Core 2)\\IS 413\\IS 413 Programs\\mission 8 assignment\\Mission08_Team0313\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,18 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
